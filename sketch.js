@@ -11,12 +11,13 @@ function setup() {
 
 function draw() {
   clear()
+  scale(2,2,2);
   stroke(0);
   strokeWeight(0);
-  background("transparent");  
+  background(0,0,0,0)
   orbitControl(5)
   rotateZ(PI);
   rotateY(-QUARTER_PI);
-  model(carModel); "transparent"
+  model(carModel);
   texture(carTexture);
 }
