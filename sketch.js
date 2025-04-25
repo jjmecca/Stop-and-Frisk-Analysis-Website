@@ -1,8 +1,7 @@
 let carModel, carTexture;
 
 function preload() {
-  carModel = loadModel('model/police-car.stl', true);
-  carTexture = loadImage('img/police-car.png');
+  carModel = loadModel('model/police-car.obj', true);
 }
 
 function setup() {
@@ -19,5 +18,5 @@ function draw() {
   rotateZ(PI);
   rotateY(-QUARTER_PI);
   model(carModel);
-  texture(carTexture);
+  //texture(carTexture);
 }
