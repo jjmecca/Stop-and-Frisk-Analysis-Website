@@ -2,6 +2,7 @@ let carModel, carTexture;
 
 function preload() {
   carModel = loadModel('model/police-car.obj', true);
+  carTexture = loadImage('img/police-car.png')
 }
 
 function setup() {
@@ -18,5 +19,7 @@ function draw() {
   rotateZ(PI);
   rotateY(-QUARTER_PI);
   model(carModel);
-  //texture(carTexture);
+  texture(carTexture);
 }
+
+//https://sketchfab.com/3d-models/pixel-police-car-f750782961284b0a9e3748a97539b303
