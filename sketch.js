@@ -16,8 +16,8 @@ function draw() {
   strokeWeight(0);
   background(0,0,0,0)
   orbitControl(5)
-  rotateZ(PI);
-  rotateY(-QUARTER_PI);
+  rotateX(QUARTER_PI*1.7);
+  rotateZ(QUARTER_PI*3.1);
   model(carModel);
   texture(carTexture);
 }
