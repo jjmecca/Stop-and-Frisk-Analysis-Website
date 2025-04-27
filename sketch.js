@@ -6,12 +6,12 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 800, WEBGL);
+  createCanvas(windowWidth, 800, WEBGL);
 }
 
 function draw() {
   clear()
-  scale(2,2,2);
+  scale(2.5,2.5,2.5);
   stroke(0);
   strokeWeight(0);
   background(0,0,0,0)
@@ -20,6 +20,15 @@ function draw() {
   rotateZ(QUARTER_PI*3.1);
   model(carModel);
   texture(carTexture);
+}
+
+function touchStart() {
+  return false; // Prevent default touchstart behavior
+}
+
+function touchMove() {
+  event.preventDefault(); // Prevent default touchmove behavior
+  return false;
 }
 
 //https://sketchfab.com/3d-models/pixel-police-car-f750782961284b0a9e3748a97539b303
