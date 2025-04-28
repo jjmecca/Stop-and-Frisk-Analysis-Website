@@ -46,4 +46,11 @@ canvas{
 
 #info{
     background-color: #15232d;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+footer{
+    margin-top: 0px;
+    padding-top: 0px;
 }
