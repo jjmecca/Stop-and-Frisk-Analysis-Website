@@ -9,6 +9,10 @@
     <!-- p5js -->
     <script src="./libs/p5.min.js"></script>
     <script src="./libs/p5.sound.min.js"></script>
+    <!-- d3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -76,6 +80,26 @@
             <div class="row align-items-center">
               <div class="col-7" id="visuals">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minus iusto ratione non aut vitae sequi praesentium molestias porro cum? Perspiciatis corrupti sapiente earum ea id, numquam rem expedita repellat.</p>
+                  <canvas id="chart"></canvas>
+                  <script>
+                    d3.csv('.data/saf_edited').then(makeChart);
+                    function makeChart(players) {
+                      var playerLabels = players.map(function(d) {return d.SUSPECT_RACE_DESCRIPTION});
+                      var weeksData = players.map(function(d) {return d.SUSPECT_RACE_DESCRIPTION});
+                    
+                      var chart = new Chart('chart', {
+                        type: 'horizontalBar',
+                        data: {
+                          labels: playerLabels,
+                          datasets: [
+                            {
+                              data: weeksData
+                            }
+                          ]
+                        }
+                      });
+                    }
+                  </script>
               </div>
               <div class="col-5" id="info">
                   <h1>hello world......</h1>
