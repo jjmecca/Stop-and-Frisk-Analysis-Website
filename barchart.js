@@ -4,9 +4,12 @@ const data = {
     labels: ['1','2','3','4','5','6','7'],
     datasets: [{
         label: 'Stop Counts by Race', 
-        data: [18, 265, 8542, 1447, 130, 854, 3001],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgb(255, 99, 132)',
+        data: [8542, 3001, 1447, 854, 265, 130, 18],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)',
+            'rgba(255, 99, 132, 0.2)','rgba(255, 99, 132, 0.2)',
+            'rgba(78, 78, 78, 0.2)','rgba(255, 99, 132, 0.2)', 
+            'rgba(255, 99, 132, 0.2)' , 'rgba(255, 99, 132, 0.2)'],
+        borderColor: ['rgb(255, 99, 132)','rgb(255, 99, 132)','rgb(255, 99, 132)','rgb(112, 94, 98)','rgb(255, 99, 132)','rgb(255, 99, 132)','rgb(255, 99, 132)'],
         borderWidth: 1
     }]
 };
@@ -16,18 +19,18 @@ const config = {
     options: {
         animation: { duration: 2500 },
         responsive: true,
-        scales: { y: { beginAtZero: true } }
+        scales: { y: { beginAtZero: true } },
+        maintainAspectRatio: false
     },
 };
 
+let ctx = document.getElementById("barchart").getContext('2d');
+let chartInstance = null;
 
 function reloadGraph(){
     chartInstance.destroy()
     chartInstance = new Chart(ctx, config)
 }
-
-let ctx = document.getElementById("barchart").getContext('2d');
-let chartInstance = null;
 
 function renderChart() {
     if (!ctx) return;
@@ -37,8 +40,6 @@ function renderChart() {
 ScrollTrigger.create({
     trigger: "#Section1",
     start: "+=400",
-    end: "bottom bottom",
-    markers: true,
     scrub: true,
     onEnter: () => { if (!chartInstance) renderChart(); },
     onLeaveBack: () => {

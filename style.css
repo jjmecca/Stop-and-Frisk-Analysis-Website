@@ -44,12 +44,18 @@ canvas{
     color: #141f2a;
 }
 
-
-#part1{
-    max-height: fit-content;
-}
-
 footer{
     margin-top: 0px;
     padding-top: 0px;
+}
+
+#Section1{
+    min-height: 100vh;
+}
+
+#barchart {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 2 / 1.2; /* or whatever ratio looks best */
+    margin: 0 auto;
 }
