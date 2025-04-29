@@ -9,11 +9,11 @@
 
 #navigation a {
     margin-left: 20px;
-    color: aliceblue;
+    color: #939499;
 }
 
 #navigation a:hover{
-    color: #34495d;
+    color: aliceblue;
 }
 
 a {

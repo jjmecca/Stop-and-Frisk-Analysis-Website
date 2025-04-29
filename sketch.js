@@ -1,5 +1,7 @@
 let carModel, carTexture;
 
+let rangle =0;
+
 function preload() {
   carModel = loadModel('model/police-car.obj', true);
   carTexture = loadImage('img/police-car.png');
@@ -16,12 +18,13 @@ function draw() {
   stroke(0);
   strokeWeight(0);
   background(0,0,0,0);
-  orbitControl(1, 1, 0);
+  //orbitControl(1, 1, 0);
   rotateX(QUARTER_PI*1.7);
-  rotateZ(QUARTER_PI*3.1);
+  rotateZ(QUARTER_PI*(3.1+rangle));
   translate(0,0,25);
   model(carModel);
   texture(carTexture);
+  rangle+=0.001;
 }
 
 function mousePressed(){
