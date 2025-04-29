@@ -44,10 +44,9 @@ canvas{
     color: #141f2a;
 }
 
-#info{
-    background-color: #15232d;
-    padding-top: 50px;
-    padding-bottom: 200px;
+
+#part1{
+    max-height: fit-content;
 }
 
 footer{
