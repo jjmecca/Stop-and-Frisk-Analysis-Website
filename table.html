@@ -1,0 +1,80 @@
+<div class="MarioFont1">
+    <h2>10 Latest Mens 100m World Record Holders</h2>
+</div>
+        <table id="M100-Table"  >
+    
+            <div class="table-container">
+                    <tr class="Pixellari_Table">
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.58</td>
+                        <td>Usain Bolt</td>
+                        <td>2009</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.69</td>
+                        <td>Usain Bolt</td>
+                        <td>2008</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.72</td>
+                        <td>Usain Bolt</td>
+                        <td>2008</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.74</td>
+                        <td>Asafa Powell</td>
+                        <td>2007</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.77</td>
+                        <td>Asafa Powell</td>
+                        <td>2005</td>
+                
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.78</td>
+                        <td>Tim Montgomery</td>
+                        <td>2002</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.79</td>
+                        <td>Maurice Greene</td>
+                        <td>1999</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.84</td>
+                        <td>Donovan Bailey</td>
+                        <td>1996</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.85</td>
+                        <td>Leroy Burrell</td>
+                        <td>1994</td>
+                    </tr>
+                    <tr class="Pixellari_Table">
+                        <td>9.86</td>
+                        <td>Carl Lewis</td>
+                        <td>1991</td>
+                    </tr>
+        </table>
+</div>
+      <script>
+        const Mrows = document.querySelectorAll("#M100-Table tr");
+      
+
+        gsap.from(Mrows, {
+          y: 100, // Fly in below
+          opacity: 0, 
+          duration: 1, 
+          stagger: 0.5,
+          scrollTrigger: {
+            trigger: "#M100-Table", 
+            start: "top 80%", // Start
+            toggleActions: "restart none none none",
+          },
+        });
+      </script>
