@@ -1,6 +1,7 @@
 let carModel, carTexture;
-
-let rangle =0;
+let oWidth, oHeight, s;
+let rangle = 0;
+const canvas = document.getElementById("car");
 
 function preload() {
   carModel = loadModel('model/police-car.obj', true);
@@ -9,16 +10,18 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, 495, WEBGL);
+  oWidth=windowWidth;
+  oHeight=windowHeight;
+  s=2.7
+  createCanvas(windowWidth, windowHeight/1.6, WEBGL); //495
 }
 
 function draw() {
   clear();
-  scale(2.7,2.7,2.7);
+  scale(s,s,s);
   stroke(0);
   strokeWeight(0);
   background(0,0,0,0);
-  //orbitControl(1, 1, 0);
   rotateX(QUARTER_PI*1.7);
   rotateZ(QUARTER_PI*(3.1+rangle));
   translate(0,0,25);
@@ -34,6 +37,12 @@ function mousePressed(){
 }
 function mouseReleased(){
   sirens.stop()
+}
+
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight/1.6);
+  const scaleRatio = Math.min(windowWidth / oWidth, windowHeight / oHeight);
+  s = Math.min(2.7, Math.max(2, 2.7 * scaleRatio));
 }
 
 //https://sketchfab.com/3d-models/pixel-police-car-f750782961284b0a9e3748a97539b303

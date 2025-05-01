@@ -34,7 +34,7 @@ html, body{
 }
 
 canvas{
-    display: inline-block;
+    display: inline;
 }
 
 #title{
@@ -59,3 +59,48 @@ footer{
     aspect-ratio: 2 / 1.2; /* or whatever ratio looks best */
     margin: 0 auto;
 }
+
+.table-container {
+    width: 80%;
+    margin:10px;
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: "Pixellari";
+     min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+th, td {
+    text-align: center;
+    border: 1px solid #000000;
+    color:black;
+    padding: 5px 10px;
+}
+
+
+th {
+    background-color: rgb(88, 150, 215);
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #dadada;
+}
+
+
+.fly-in {
+    transform: translateX(-100%); 
+    opacity: 0; 
+    transition: all 0.3s ease;
+  }
+
+  .Pixellari_Table {
+    font-family: "Pixellari", sans-serif; 
+    font-size: 25px;
+  }
