@@ -16,6 +16,16 @@
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <!-- Textillate.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css"/>
+    <!--JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Creepster&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Strait&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -46,8 +56,8 @@
     <!-- BEGIN MAIN CONTENT-->
       <main id="title" class="container-fluid" style="margin-bottom: 0; padding-bottom: 0;">
           <div class="row order-first justify-content-center text-center">
-            <h2 style="font-size: 80px; color: aliceblue; padding-top: 100px; padding-bottom: 0%;">New York City</h2>
-            <h2 style="font-size: 65px; color: aliceblue; padding-bottom: 0%;">Stop & Frisk Data</h2> <!-- Textilate this! -->
+            <h2 id='target'style="font-size: 80px; color: aliceblue; padding-top: 100px; padding-bottom: 0%;">New York City</h2>
+            <h2 id='target2' style="font-size: 65px; color: aliceblue; padding-bottom: 0%;">Stop & Frisk Data</h2> <!-- Textilate this! -->
           </div>
           <div class="row justify-content-center text-center mx-auto">
               <script src="sketch.js"></script>
@@ -274,6 +284,28 @@
         <!-- Copyright -->
     </footer>
     <!-- END FOOTER -->
+    
+    <script>
+      $('#target').textillate({
+          in: {
+              effect: 'fadeInLeft', // Animation effect for text appearing
+              delayScale: 1, // Delay scale for each character
+              delay: 70, // Delay in milliseconds between each character
+              shuffle: false // Shuffle the character animation order
+          },
+          loop: false // Loop the animation
+      });
+      $('#target2').textillate({
+        initialDelay: 400,
+          in: {
+              effect: 'fadeInLeft', // Animation effect for text appearing
+              delayScale: 1, // Delay scale for each character
+              delay: 80, // Delay in milliseconds between each character
+              shuffle: false // Shuffle the character animation order
+          },
+          loop: false // Loop the animation
+      });
+    </script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

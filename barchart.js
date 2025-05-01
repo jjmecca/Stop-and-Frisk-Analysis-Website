@@ -39,7 +39,7 @@ function renderChart() {
 
 ScrollTrigger.create({
     trigger: "#Section1",
-    start: "+=400",
+    start: "top 50%",
     scrub: true,
     onEnter: () => { if (!chartInstance) renderChart(); },
     onLeaveBack: () => {
