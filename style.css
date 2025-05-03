@@ -17,6 +17,7 @@
 }
 
 a {
+    font-family: "Proxima Nova";
     color: aliceblue;
     padding-left: 20px;
     font-size: 20px;
@@ -106,10 +107,36 @@ li{
 
 p{
     font-size: 18px;
+    font-family: "Proxima Nova";
 }
 
 #table_button:active{
     background-color: #0d131b !important;
     border-color:rgb(150, 161, 170) !important; 
     color: rgb(150, 161, 170) !important;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url(font/proxima_nova.woff2) format('woff2');
+}
+
+#maps {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center !important;
+}
+
+#maps img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 60%; 
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+    border: 10px solid #141f2a; 
+    padding: 0px;
 }

@@ -44,7 +44,7 @@
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="#Section1">Stops by Race</a></li>
               <li class="nav-item"><a class="nav-link" href="#Section2">Stop vs Pop</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section3">Part 3</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Section3">NYC Stop Map</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Part 4</a></li>
               <li class="nav-item"><a class="nav-link active" href="#scrollspyHeading6">Contact Me</a></li>
             </ul>
@@ -64,11 +64,11 @@
           </div>
       </main>
       <main class="container-fluid">
-        <div class="row order-first align-items-center text-center" style="background-color: #141f2a; padding-bottom: 30px; padding-top: 10px;">
-          <h3>The NYPD has conducted millions of stop-and-frisks in New York City over the last two decades. The majority of those stopped are people of color, and a
+        <div class="row order-first align-items-center text-center" style="background-color: #141f2a; padding-bottom: 40px; padding-top: 20px; padding-left: 100px; padding-right: 100px;">
+          <p style="font-size: 25px;">The NYPD has conducted millions of stop-and-frisks in New York City over the last two decades. The majority of those stopped are people of color, and a
             vastly disproportionate number are Black. There is no evidence that ramping up stops makes New Yorkers safer. But we do know that many of these stops
             have been unlawful and that some have led to violent police misconduct. The following is an analysis of New York City’s stop-and-frisk data, including a 
-            list of stops by year.</h3>
+            list of stops by year.</p>
         </div>
       </main>
       <!-- Each part should be 1 viewport! -->
@@ -109,6 +109,7 @@
             </div>
           </div>      
       </div>
+
       <div id="Section2" class="container-fluid">
         <div class="row">
           <div class="col-8" style="padding-top: 85px; min-height: 100vh;">
@@ -159,40 +160,30 @@
                 <hr>
                 <h4>Where does the data come from?</h4>
                 <p>Data is sourced from the U.S. Census and the NYC Stop-and-Frisk dataset. Ratios were calculated by dividing the percentage of stops involving POC by the POC population percentage in each borough.<br><br>View the original data:</p>
-                <button id="table_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205);" onclick="replaceTable()">Switch Table</button>
+                <button id="table_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); width: 100%;" onclick="replaceTable()">Switch Table</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div id="Section3" class="container-fluid">
         <div class="row">
-          <div class="col-8" style="padding-top: 100px; min-height: 100vh;">
+          <div class="col-8" id="mapSlide" style="padding-top: 70px; min-height: 100vh;">
             <div class="row order-first align-items-center text-center">
+              <h2 id="mapTitle" style="margin-bottom: 30px;">Stop Locations by Race Description</h2>
             </div>
-            <div class="row align-items-center">
-              <h1>hello world......</h1>
+            <div class="row justify-content-center align-items-center text-center" id="maps">
+                <img id="map1" src="img/racemap.png" class="img-fluid mx-2">
             </div>
           </div>
           <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
             <div id="info">
               <div class="row order-first align-items-center">
-                <h1><strong3>Part 1</strong></h1>
-                  <div class="legend">
-                    <h3>Legend</h3>
-                    <ul>
-                      <li><strong>1</strong> - American Indian/Alaskan Native</li>
-                      <li><strong>2</strong> - Asian / Pacific Islander</li>
-                      <li><strong>3</strong> - Black</li>
-                      <li><strong>4</strong> - Black Hispanic</li>
-                      <li><strong>5</strong> - Middle Eastern/Southwest Asian</li>
-                      <li><strong>6</strong> - White</li>
-                      <li><strong>7</strong> - White Hispanic</li>
-                    </ul>
-                  </div>
-              </div>
-              <div class="row align-items-center">
-                <h1>hello world......</h1>
+                <h1><strong>NYC Stop Map</strong></h1>
+                <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p><br><hr><br>
+                <p>In the other version of this map, stops are color-coded by sex: blue for male and red for female. Blue clearly dominates the map, showing that the vast majority of police stops involve male individuals, with female stops barely visible in comparison.</p><br>
+                <br><br><button id="map_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-top: 40px;" onclick="replaceMap()">Switch Map</button>
               </div>
             </div>
           </div>
@@ -436,5 +427,57 @@
         });
       }
     </script>    
+    <script>
+      var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        target: '#navbar'
+      });
+    </script>
+    <script>
+      const imgElement = document.getElementById('map1');
+      const container = document.getElementById('mapTitle');
+
+      gsap.from([imgElement,container], {
+          x: -60,
+          opacity: 0, 
+          duration: 2, 
+          scrollTrigger: {
+            trigger: "#map1", 
+            start: "top 80%", // Start
+            end: "bottom 50%",
+            toggleActions: "restart none none none",
+          },
+      });
+      let sexMap = false;
+    
+      function replaceMap() {
+
+        gsap.to([imgElement,container], {
+          opacity: 0,
+          duration: 0.8,
+          x: -40,
+          overwrite: true,
+          onComplete: () => {
+            const newTableHTML1 = `Stop Locations by Sex`;
+            const newTableHTML2 = `Stop Locations by Race Description`;
+            const sex_src = 'img/sexmap.png';
+            const race_src = 'img/racemap.png';
+  
+            container.innerHTML = sexMap ? newTableHTML2 : newTableHTML1;
+            imgElement.src = sexMap ? race_src : sex_src;
+            sexMap = !sexMap;
+
+            gsap.fromTo([imgElement,container],
+              { opacity: 0, x: -60},
+              { opacity: 1, x: 0, duration: 1, overwrite: true }
+            );
+          }
+        });
+      }
+    </script>    
+    <script>
+      var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        target: '#navbar'
+      });
+    </script>
   </body>
 </html>
