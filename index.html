@@ -77,17 +77,17 @@
           <div class="row">
             <div class="col-8" style="padding-top: 100px; min-height: 100vh;">
               <div class="row order-first align-items-center text-center">
-                <h2>Stop Counts by Race Description</h2>
+                <h2 id="barchart_title">Stop Counts by Race Description</h2>
               </div>
               <div class="row align-items-center text-center">
                 <canvas id="barchart"></canvas>
-                <button type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d;" onclick="reloadGraph()">Reload</button>
-                <script src="barchart.js"></script>
+                <button type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d; width: 50%;" onclick="reloadGraph()">Reload</button>
+                <button id="bar_button" type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d; width: 50%;" onclick="changeBar()">View by Sex</button>
               </div>
             </div>
             <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
               <div id="info">
-                <div class="row order-first align-items-center justify-content-center" >
+                <div class="row order-first align-items-center justify-content-center" id="info1">
                   <h1><strong>Stops by Race</strong></h1>
                     <p>This bar chart shows police stops by race, with People of Color (POC) highlighted in red. The data reveals a clear disparity—POC are stopped more often than white individuals, with Black individuals facing the highest stop rate by far.<br><br></p>
                     <hr>
@@ -169,21 +169,20 @@
 
       <div id="Section3" class="container-fluid">
         <div class="row">
-          <div class="col-8" id="mapSlide" style="padding-top: 70px; min-height: 100vh;">
+          <div class="col-8" id="mapSlide" style="padding-top: 65px; min-height: 100vh;">
             <div class="row order-first align-items-center text-center">
               <h2 id="mapTitle" style="margin-bottom: 30px;">Stop Locations by Race Description</h2>
             </div>
             <div class="row justify-content-center align-items-center text-center" id="maps">
                 <img id="map1" src="img/racemap.png" class="img-fluid mx-2">
+                <button id="map_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-bottom: 20px; margin-top: 30px;" onclick="replaceMap()">View by Sex</button>
             </div>
           </div>
           <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
             <div id="info">
-              <div class="row order-first align-items-center">
-                <h1><strong>NYC Stop Map</strong></h1>
+              <div id="mapDesc" class="row order-first align-items-center">
+                <h1><strong>NYC Stop Map<br>by Race</strong></h1>
                 <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p><br><hr><br>
-                <p>In the other version of this map, stops are color-coded by sex: blue for male and red for female. Blue clearly dominates the map, showing that the vast majority of police stops involve male individuals, with female stops barely visible in comparison.</p><br>
-                <br><br><button id="map_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-top: 40px;" onclick="replaceMap()">Switch Map</button>
               </div>
             </div>
           </div>
@@ -435,6 +434,7 @@
     <script>
       const imgElement = document.getElementById('map1');
       const container = document.getElementById('mapTitle');
+      const desc = document.getElementById('mapDesc');
 
       gsap.from([imgElement,container], {
           x: -60,
@@ -450,11 +450,12 @@
       let sexMap = false;
     
       function replaceMap() {
+        const map_button = document.getElementById('map_button');
 
         gsap.to([imgElement,container], {
           opacity: 0,
           duration: 0.8,
-          x: -40,
+          x: -40, //-40
           overwrite: true,
           onComplete: () => {
             const newTableHTML1 = `Stop Locations by Sex`;
@@ -467,10 +468,34 @@
             sexMap = !sexMap;
 
             gsap.fromTo([imgElement,container],
-              { opacity: 0, x: -60},
+              { opacity: 0, x: -60}, //-60
               { opacity: 1, x: 0, duration: 1, overwrite: true }
             );
           }
+        });
+
+        map_button.innerHTML = sexMap ? `View by Sex` : `View by Race`;
+
+        newDescHTML1 = `
+                <h1><strong>NYC Stop Map<br>by Race</strong></h1>
+                <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p><br><hr><br>`;
+        newDescHTML2 = `
+                <h1><strong>NYC Stop Map<br>by Sex</strong></h1>
+                <p>In the other version of this map, stops are color-coded by sex: blue for male and red for female. Blue clearly dominates the map, showing that the vast majority of police stops involve male individuals, with female stops barely visible in comparison.</p><br>`;
+        const newDescHTML = sexMap ? newDescHTML1 : newDescHTML2;
+
+        gsap.to(desc, {
+            opacity: 0,
+            duration: 0.8,
+            x: 20,
+            onComplete: () => {
+                desc.innerHTML = newDescHTML;
+
+                gsap.fromTo(desc,
+                    { opacity: 0, x: 20 },
+                    { opacity: 1, x: 0, duration: 1 }
+                );
+            }
         });
       }
     </script>    
@@ -479,5 +504,6 @@
         target: '#navbar'
       });
     </script>
+    <script src="barchart.js"></script>
   </body>
 </html>
