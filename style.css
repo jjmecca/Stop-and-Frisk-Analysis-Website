@@ -31,6 +31,8 @@ html, body{
     color: aliceblue;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 canvas{
@@ -104,4 +106,10 @@ li{
 
 p{
     font-size: 18px;
+}
+
+#table_button:active{
+    background-color: #0d131b !important;
+    border-color:rgb(150, 161, 170) !important; 
+    color: rgb(150, 161, 170) !important;
 }

@@ -42,8 +42,8 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section1">Part 1</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section2">Part 2</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Section1">Stops by Race</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Section2">Stop vs Pop</a></li>
               <li class="nav-item"><a class="nav-link" href="#Section3">Part 3</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Part 4</a></li>
               <li class="nav-item"><a class="nav-link active" href="#scrollspyHeading6">Contact Me</a></li>
@@ -81,14 +81,14 @@
               </div>
               <div class="row align-items-center text-center">
                 <canvas id="barchart"></canvas>
-                <button onclick="reloadGraph()">Reload</button>
+                <button type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d;" onclick="reloadGraph()">Reload</button>
                 <script src="barchart.js"></script>
               </div>
             </div>
             <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
               <div id="info">
                 <div class="row order-first align-items-center justify-content-center" >
-                  <h1><strong>Heading 1</strong></h1>
+                  <h1><strong>Stops by Race</strong></h1>
                     <p>This bar chart shows police stops by race, with People of Color (POC) highlighted in red. The data reveals a clear disparity—POC are stopped more often than white individuals, with Black individuals facing the highest stop rate by far.<br><br></p>
                     <hr>
                     <div class="legend">
@@ -111,7 +111,7 @@
       </div>
       <div id="Section2" class="container-fluid">
         <div class="row">
-          <div class="col-8" style="padding-top: 100px; min-height: 100vh;">
+          <div class="col-8" style="padding-top: 85px; min-height: 100vh;">
             <div class="row order-first align-items-center text-center">
               <h2 style="margin-bottom: 40px;">Racial Disparity in Police Stops by Borough</h2>
             </div>
@@ -151,14 +151,15 @@
               </table>
             </div>
           </div>
-          <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
+          <div class="col-4" style="background-color: #15232d; padding-top: 90px; padding-left: 50px;">
             <div class="row order-first align-items-center justify-content-center">
               <div id="info">
-                <br>
-                  <h1><strong>Heading</strong></h1>
-                  <p>This table ranks the five NYC boroughs based on the ratio of their POC population percentage to the percentage of police stops involving POC. A higher ratio indicates a greater disparity—where People of Color are stopped at rates far exceeding their share of the population. Staten Island ranks highest, with a ratio of 1.78, suggesting the most disproportionate policing among the boroughs.</p>
-
-                  <!-- SPECIFIC POP & STOP % DATA  -->
+                <h1><strong>Stop vs Pop</strong></h1><!-- Disparity by Borough -->
+                <p>This table ranks the five NYC boroughs based on the ratio of POC stop percentage to POC population percentage. A higher ratio indicates greater disparity—where People of Color are stopped at rates far exceeding their representation. Staten Island ranks highest, with a ratio of 1.78, suggesting the most disproportionate policing.</p>
+                <hr>
+                <h4>Where does the data come from?</h4>
+                <p>Data is sourced from the U.S. Census and the NYC Stop-and-Frisk dataset. Ratios were calculated by dividing the percentage of stops involving POC by the POC population percentage in each borough.<br><br>View the original data:</p>
+                <button id="table_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205);" onclick="replaceTable()">Switch Table</button>
               </div>
             </div>
           </div>
@@ -347,7 +348,7 @@
           y: 100, // Fly in below
           opacity: 0, 
           duration: 1, 
-          stagger: 0.2,
+          stagger: 0.3,
           scrollTrigger: {
             trigger: "#racism_ranked", 
             start: "top 80%", // Start
@@ -355,19 +356,17 @@
           },
       });
 
-      // Set initial state for all .info elements
+      //initial
       gsap.set("#info", { opacity: 0, x: 20 });
 
-      // Apply batch ScrollTrigger
       ScrollTrigger.batch("#info", {
-        start: "top 60%",
-        end: "bottom 40%",
+        start: "top 50%",
+        end: "bottom",
         onEnter: batch => {
           gsap.to(batch, {
             opacity: 1,
             x: 0,
             duration: 1.5,
-            scrub:true,
             stagger: 0.1,
             overwrite: true
           });
@@ -377,7 +376,6 @@
             opacity: 1,
             x: 0,
             duration: 1.5,
-            scrub:true,
             stagger: 0.1,
             overwrite: true
           });
@@ -387,12 +385,56 @@
             opacity: 0,
             x: 20,
             duration: 1.5,
-            scrub:true,
             stagger: 0.1,
             overwrite: true
           });
         }
       });
     </script>
+    <script>
+      let showingTable1 = false;
+    
+      function replaceTable() {
+        const container = document.getElementById('racism_ranked');
+    
+        gsap.to(container, {
+          opacity: 0,
+          y: 100,
+          duration: 0.8,
+          overwrite: true,
+          onComplete: () => {
+            const newTableHTML1 = `
+              <table>
+                <tr><th>Borough</th><th>POC Population %</th><th>POC Stop %</th></tr>
+                <tr><td>Staten Island</td><td>44.6%</td><td>79.21%</td></tr>
+                <tr><td>Manhattan</td><td>68.7%</td><td>93.14%</td></tr>
+                <tr><td>Queens</td><td>76%</td><td>90.88%</td></tr>
+                <tr><td>Brooklyn</td><td>62.8%</td><td>92.73%</td></tr>
+                <tr><td>The Bronx</td><td>91%</td><td>98.47%</td></tr>
+              </table>
+            `;
+    
+            const newTableHTML2 = `
+              <table>
+                <tr><th>Rank</th><th>Borough</th><th>Ratio</th></tr>
+                <tr><td>1</td><td>Staten Island</td><td>1.78</td></tr>
+                <tr><td>2</td><td>Brooklyn</td><td>1.48</td></tr>
+                <tr><td>3</td><td>Manhattan</td><td>1.36</td></tr>
+                <tr><td>4</td><td>Queens</td><td>1.20</td></tr>
+                <tr><td>5</td><td>Bronx</td><td>1.08</td></tr>
+              </table>
+            `;
+  
+            container.innerHTML = showingTable1 ? newTableHTML2 : newTableHTML1;
+            showingTable1 = !showingTable1;
+    
+            gsap.fromTo(container,
+              { opacity: 0, y: 100 },
+              { opacity: 1, y: 0, duration: 0.8, overwrite: true }
+            );
+          }
+        });
+      }
+    </script>    
   </body>
 </html>
