@@ -40,6 +40,11 @@ canvas{
     display: inline;
 }
 
+#pieChart{
+    width: 50% !important;
+    height: auto !important;
+}
+
 #title{
     background-image: url("img/nyc.jpg");
     background-size: 100vw 100vh;
