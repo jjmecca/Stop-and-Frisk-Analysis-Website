@@ -76,7 +76,7 @@ function renderChart() {
 }
 
 ScrollTrigger.create({
-    trigger: "#Section1",
+    trigger: "#Section2",
     start: "top 50%",
     scrub: true,
     onEnter: () => { if (!chartInstance) renderChart(); },

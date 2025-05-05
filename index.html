@@ -45,7 +45,10 @@
               <li class="nav-item"><a class="nav-link" href="#Section1">Stops by Race</a></li>
               <li class="nav-item"><a class="nav-link" href="#Section2">Stop vs Pop</a></li>
               <li class="nav-item"><a class="nav-link" href="#Section3">NYC Stop Map</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Part 4</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Section4">Part 4</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Section5">Part 4</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Section5">Part 4</a></li>
+              <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
               <li class="nav-item"><a class="nav-link active" href="#scrollspyHeading6">Contact Me</a></li>
             </ul>
           </div>
@@ -54,7 +57,13 @@
     <!-- END NAVBAR-->
 
     <!-- BEGIN MAIN CONTENT-->
-      <main id="title" class="container-fluid" style="margin-bottom: 0; padding-bottom: 0;" id="car">
+      <main id="title" class="container-fluid" style="margin-bottom: 0; padding-bottom: 0;  align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      line-height: 1.8;
+      margin: 0 auto;
+      text-align: center;" id="car">
           <div class="row order-first justify-content-center text-center">
             <h2 id='target'style="font-size: 80px; color: aliceblue; padding-top: 100px; padding-bottom: 0%;">New York City</h2>
             <h2 id='target2' style="font-size: 65px; color: aliceblue; padding-bottom: 0%;">Stop & Frisk Data</h2> <!-- Textilate this! -->
@@ -69,17 +78,34 @@
             vastly disproportionate number are Black. There is no evidence that ramping up stops makes New Yorkers safer. But we do know that many of these stops
             have been unlawful and that some have led to violent police misconduct. The following is an analysis of New York City’s stop-and-frisk data, including a 
             list of stops by year.</p>
-            <!-- <div class="timeline-container">
-              <div class="timeline-wrapper">
-                <div class="timeline-line"></div>
-                <div class="timeline" id="timeline"></div>
-              </div>
-            </div> -->
         </div>
       </main>
+      
       <!-- Each part should be 1 viewport! -->
       <main>
         <div id="Section1" class="container-fluid">
+          <div class="row">
+            <div class="col-8" style="padding-top: 100px; min-height: 100vh;">
+              <div class="row order-first align-items-center text-center">
+                <h2 id="barchart_title">Stop Counts by Month</h2>
+              </div>
+              <div class="row align-items-center text-center">
+                <canvas id="linechart"></canvas>
+                <button type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d;" onclick="reloadLine()">Reload</button>
+              </div>
+            </div>
+            <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
+              <div id="info">
+                <div class="row order-first align-items-center justify-content-center" id="info1">
+                  <h1><strong>Stops by Month</strong></h1>
+                    <p>This line chart displays the total number of stop-and-frisk incidents recorded each month of 2023. The data shows a gradual increase over time, culminating in a noticeable peak in October, which recorded the highest number of stops at 1,734. This spike highlights a significant surge in activity during that period.<br><br></p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+
+        <div id="Section2" class="container-fluid">
           <div class="row">
             <div class="col-8" style="padding-top: 100px; min-height: 100vh;">
               <div class="row order-first align-items-center text-center">
@@ -116,7 +142,29 @@
           </div>      
       </div>
 
-      <div id="Section2" class="container-fluid">
+      <div id="Section3" class="container-fluid">
+        <div class="row">
+          <div class="col-8" id="mapSlide" style="padding-top: 65px; min-height: 100vh;">
+            <div class="row order-first align-items-center text-center">
+              <h2 id="mapTitle" style="margin-bottom: 30px;">Stop Locations by Race Description</h2>
+            </div>
+            <div class="row justify-content-center align-items-center text-center" id="maps">
+                <img id="map1" src="img/racemap.png" class="img-fluid mx-2">
+                <button id="map_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-bottom: 20px; margin-top: 30px;" onclick="replaceMap()">View by Sex</button>
+            </div>
+          </div>
+          <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
+            <div id="info">
+              <div id="mapDesc" class="row order-first align-items-center">
+                <h1><strong>NYC Stop Map<br>by Race</strong></h1>
+                <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Section4" class="container-fluid">
         <div class="row">
           <div class="col-8" style="padding-top: 85px; min-height: 100vh;">
             <div class="row order-first align-items-center text-center">
@@ -173,54 +221,32 @@
         </div>
       </div>
 
-      <div id="Section3" class="container-fluid">
+      <div id="Section5" class="container-fluid">
         <div class="row">
           <div class="col-8" id="mapSlide" style="padding-top: 65px; min-height: 100vh;">
-            <div class="row order-first align-items-center text-center">
-              <h2 id="mapTitle" style="margin-bottom: 30px;">Stop Locations by Race Description</h2>
-            </div>
-            <div class="row justify-content-center align-items-center text-center" id="maps">
-                <img id="map1" src="img/racemap.png" class="img-fluid mx-2">
-                <button id="map_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-bottom: 20px; margin-top: 30px;" onclick="replaceMap()">View by Sex</button>
-            </div>
-          </div>
-          <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
-            <div id="info">
-              <div id="mapDesc" class="row order-first align-items-center">
-                <h1><strong>NYC Stop Map<br>by Race</strong></h1>
-                <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="Section4" class="container-fluid">
-        <div class="row">
-          <div class="col-8" id="mapSlide" style="padding-top: 65px; min-height: 100vh;">
-            <div class="row order-first align-items-center text-center">
-              <h2 id="mapTitle" style="margin-bottom: 30px;">Stop Locations by Race Description</h2>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <div class="row order-first align-items-center justify-content-center text-center">
+              <h2 id="mapTitle" style="margin-bottom: 20px;">Stop Outcomes</h2>
+              <div class="btn-group btn-group-toggle" style="width: 80%;" data-toggle="buttons">
                 <label class="btn btn-secondary active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                  <input type="radio" name="options" id="option1" autocomplete="off" onclick="frisked()"> Frisked
                 </label>
                 <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                  <input type="radio" name="options" id="option2" autocomplete="off" onclick="weapon()"> Weapon Found
                 </label>
                 <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                  <input type="radio" name="options" id="option3" autocomplete="off" onclick="arrested()"> Arrested
                 </label>
               </div>
             </div>
             <div class="row justify-content-center align-items-center text-center" id="maps">
-              <canvas id="pieChart" width="10"></canvas>
+              <canvas id="pieChart" style="padding-top: 30px;"></canvas>
             </div>
           </div>
           <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
             <div id="info">
               <div id="mapDesc" class="row order-first align-items-center">
-                <h1><strong>NYC Stop Map<br>by Race</strong></h1>
-                <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p>
+                <h1><strong>Stop Outcomes</strong></h1>
+                <p>This section visualizes what happened after police stops — whether individuals were frisked, arrested, or if a weapon was found. Around 35% of stops led to frisks, but few uncovered weapons or resulted in arrests. <br><hr></p><p>Use the buttons to switch between outcomes.</p>
               </div>
             </div>
           </div>
@@ -350,7 +376,8 @@
 
     <!-- GSAP -->
     <script src="gsap.js"></script>
-    <script src="piechart.js"></script>
     <script src="barchart.js"></script>
+    <script src="piechart.js"></script>
+    <script src="linegraph.js"></script>
   </body>
 </html>

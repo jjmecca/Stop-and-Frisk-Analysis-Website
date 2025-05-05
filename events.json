@@ -1,90 +1,44 @@
 [
-    {
-      "title": "Apollo 11 Launch",
-      "date": "July 16, 1969",
-      "description": "Apollo 11 was launched from Kennedy Space Center aboard a Saturn V rocket.",
-      "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F14_625.jpg",
-      "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F14_625.jpg"
-    },
-    {
-      "title": "Translunar Injection",
-      "date": "July 16, 1969",
-      "description": "The spacecraft performed a maneuver to set it on course toward the Moon.",
-      "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F23_625.jpg",
-      "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F23_625.jpg"
-    },
-    {
-      "title": "Entering Lunar Orbit",
-      "date": "July 19, 1969",
-      "description": "Apollo 11 entered the Moon's orbit after traveling approximately 240,000 miles.",
-      "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F34_625.jpg",
-      "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F34_625.jpg"
-    },
-    {
-      "title": "Lunar Module Separation",
-      "date": "July 20, 1969",
-      "description": "The Lunar Module, 'Eagle,' separated from the Command Module for descent to the Moon.",
-      "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F37_625.jpg",
-    "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F37_625.jpg"
-    },
-    {
-      "title": "First Moon Landing",
-      "date": "July 20, 1969",
-      "description": "Neil Armstrong and Buzz Aldrin successfully landed the Lunar Module on the Moon's surface.",
-      "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F42_625.jpg",
-      "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F42_625.jpg"
-    },
-    {
-      "title": "First Moonwalk",
-      "date": "July 20, 1969",
-      "description": "Neil Armstrong became the first human to step onto the Moon, followed by Buzz Aldrin.",
-      "image": "https://i.ytimg.com/vi/S9HdPi9Ikhk/maxresdefault.jpg",
-      "link": "https://i.ytimg.com/vi/S9HdPi9Ikhk/maxresdefault.jpg"
-    },
-    {
-      "title": "Planting the Flag",
-      "date": "July 20, 1969",
-      "description": "Armstrong and Aldrin planted the U.S. flag on the Moon's surface.",
-      "image": "https://image.pbs.org/video-assets/YjO6Mcw-asset-mezzanine-16x9-ABhAbdo.jpg?focalcrop=1200x630x50x10&format=auto",
-      "link": "https://image.pbs.org/video-assets/YjO6Mcw-asset-mezzanine-16x9-ABhAbdo.jpg?focalcrop=1200x630x50x10&format=auto"
-    },
-    {
-      "title": "Lunar Module Liftoff",
-      "date": "July 21, 1969",
-      "description": "The Lunar Module lifted off from the Moon's surface to rendezvous with the Command Module.",
-      "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F46_625.jpg",
-      "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F46_625.jpg"
-    },
-    {
-        "title": "Earth Atmosphere Rentry",
-        "date": "July 24, 1969",
-        "description": "Apollo 11 renters Earths's atmosphere",
-        "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F59_625.jpg",
-        "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F59_625.jpg"
-      },
-      {
-        "title": "Splashdown and Recovery",
-        "date": "July 24, 1969",
-        "description": "Apollo 11 safely splashed down in the Pacific Ocean and was recovered by the USS Hornet.",
-        "image": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F62_625.jpg",
-        "link": "http://www.workingonthemoon.com/ALLMS/Img_625/P01_F62_625.jpg"
-      },
-    {
-      "title": "Quarantine Period",
-      "date": "July 24 - August 10, 1969",
-      "description": "The astronauts were placed in quarantine to prevent potential contamination from lunar material.",
-      "image": "https://farm9.staticflickr.com/8448/7876061882_ce4d57c15c_o.jpg",
-      "link": "https://farm9.staticflickr.com/8448/7876061882_ce4d57c15c_o.jpg"
-    },
-    {
-      "title": "Ticker Tape Parade",
-      "date": "August 13, 1969",
-      "description": "New York City welcomed Apollo 11 astronauts Neil A. Armstrong, Lt. Col. Michael Collins, Col. Buzz Aldrin with an exuberant ticker-tape reception to applaud their moon landing three weeks earlier on July 20. ",
-      "image": "https://pbs.twimg.com/media/F0MT1iYXsAAmZTG.jpg:large",
-      "link": "https://pbs.twimg.com/media/F0MT1iYXsAAmZTG.jpg:large"
-    }
-  ]
-  
-
-
-  
+  {
+    "title": "Giuliani Intensifies Policy",
+    "date": "1999",
+    "description": "Stop-and-Frisk policy intensified under Mayor Giuliani.",
+    "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-09/240926-rudy-giuliani-mn-0915-b91e60.jpg"
+  },
+  {
+    "title": "Bloomberg Expands Stop-and-Frisk",
+    "date": "2002",
+    "description": "Mayor Bloomberg expanded the Stop-and-Frisk program.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Mayor_Michael_Bloomberg_%28cropped%29.jpg/250px-Mayor_Michael_Bloomberg_%28cropped%29.jpg"
+  },
+  {
+    "title": "Peak Year of Stops",
+    "date": "2011",
+    "description": "Stop-and-Frisk peaked with ~685,000 stops, 84% involving people of color.",
+    "image": "https://s3-prod.crainsnewyork.com/s3fs-public/POLITICS_140139992_AR_-1_0.jpg"
+  },
+  {
+    "title": "Federal Judge Ruling",
+    "date": "2013",
+    "description": "A federal judge ruled Stop-and-Frisk unconstitutional as practiced.",
+    "image": "https://www.advocate.com/media-library/court-judge-making-ruling-with-gavel.jpg?id=58009020&width=1245&height=700&coordinates=0%2C0%2C0%2C0"
+  },
+  {
+    "title": "Reforms Begin",
+    "date": "2014",
+    "description": "Mayor de Blasio begins reforms to the Stop-and-Frisk program.",
+    "image": "https://www.politico.com/dims4/default/286b315/2147483647/strip/true/crop/1160x773+0+0/resize/630x420!/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fa5%2F70%2F3a526c5e45dea259f30a57258a55%2F210825-de-blasio-ap-773.jpg"
+  },
+  {
+    "title": "Dramatic Decline",
+    "date": "2019",
+    "description": "Stop-and-Frisk encounters drop to around 13,000.",
+    "image": "https://jonnaspilbor.com/wp-content/uploads/2024/12/Spilbor-5-Understanding-Your-Rights-During-a-Police-Stop-in-New-York_December-2024.jpg"
+  },
+  {
+    "title": "Ongoing Debate",
+    "date": "2020+",
+    "description": "BLM protests spark renewed debates over Stop-and-Frisk policies.",
+    "image": "https://news.uchicago.edu/sites/default/files/images/2020-06/BLM_1380_BigBrains.jpg"
+  }
+]

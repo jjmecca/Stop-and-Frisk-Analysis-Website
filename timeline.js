@@ -27,26 +27,9 @@ fetch('events.json')
         });
 
         // Initialize GSAP after events are added
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                initializeScrollTrigger();
-                ScrollTrigger.refresh();
-            });
-        });        
+        initializeScrollTrigger();
     })
     .catch(error => console.error('Error loading events:', error));
-
-gsap.from(".timeline-title", {
-    opacity: 0,
-    y: -20,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".timeline-container",
-        start: "top center",
-        end: "bottom top",
-        toggleActions: "play none none reverse"
-    }
-});    
 
 
 
@@ -55,18 +38,17 @@ gsap.from(".timeline-title", {
     
 function initializeScrollTrigger() {
     const timeline = document.querySelector('.timeline');
-    const timelineContainer = document.querySelector('.timeline-wrapper');
+    const timelineContainer = document.querySelector('.timeline-container');
 
     gsap.to(timeline, {
         x: () => -(timeline.scrollWidth - window.innerWidth) + "px",
         ease: "none",
         scrollTrigger: {
-            trigger: timelineContainer, // Or ".timeline-wrapper" if you added that
+            trigger: timelineContainer,
             start: "top top",
             end: () => "+=" + (timeline.scrollWidth - window.innerWidth),
             scrub: true,
             pin: true,
-            anticipatePin: 1
-        }
-    });    
+        },
+    });
 }
