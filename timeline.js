@@ -11,7 +11,6 @@ fetch('events.json')
         events.forEach((event, index) => {
             const eventDiv = document.createElement('div');
             eventDiv.className = `event ${ index % 2 === 0 ? 'event-top' : 'event-bottomn' }`;
-
             eventDiv.innerHTML = `
             <a href="${event.link}" style="color:white;">
             <img src="${event.image}" alt="${event.title}">
