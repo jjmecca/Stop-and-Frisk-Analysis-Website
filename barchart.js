@@ -2,7 +2,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const info = document.getElementById('info1');
 const title = document.getElementById('barchart_title')
-const button = document.getElementById('bar_button');
 
 let bar = true;
 
@@ -18,6 +17,7 @@ const newTableHTML2 = `
         <li><strong>2</strong> - Female</li>
         </ul>
     </div>
+    <button id="bar_button" type="button" class="btn btn-secondary btn-lg active" style="margin-top: 56.5%; background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); width: 100%;" onclick="changeBar()">View by Race</button>
     `;
 const newTableHTML1 = `
     <h1><strong>Stops by Race</strong></h1>
@@ -36,6 +36,7 @@ const newTableHTML1 = `
         <li><strong>7</strong> - American Indian/Alaskan Native</li>
         </ul>
     </div>
+    <button id="bar_button" type="button" class="btn btn-secondary btn-lg active" style="margin-top: 15%; background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); width: 100%;" onclick="changeBar()">View by Sex</button>
     `;
 
 let data = {
@@ -176,6 +177,4 @@ function changeBar(){
           );
         }
     });
-
-    button.innerHTML = bar ? `View by Sex` : `View by Race`;
 }

@@ -2,6 +2,8 @@ let carModel, carTexture;
 let oWidth, oHeight, s;
 let rangle = 0;
 const canvas = document.getElementById("title");
+const target = document.getElementById('target');
+const target2 = document.getElementById('target2');
 
 function preload() {
   carModel = loadModel('model/police-car.obj', true);
@@ -32,11 +34,20 @@ function draw() {
 
 function mousePressed(){
   if(mouseY>100 && mouseY<400 && mouseX<1000 && mouseX>400){
-    sirens.loop()
+    sirens.loop();
+    target.classList.remove("title");
+    target2.classList.remove("title");
+    target.classList.add("flashing");
+    target2.classList.add("flashing");
   }
 }
+
 function mouseReleased(){
-  sirens.stop()
+  sirens.stop();
+  target.classList.remove("flashing");
+  target2.classList.remove("flashing");
+  target.classList.add("title");
+  target2.classList.add("title");
 }
 
 function windowResized(){
