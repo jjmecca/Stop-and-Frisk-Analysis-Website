@@ -144,7 +144,7 @@ newDescHTML1 = `
         <p>This map plots every recorded police stop across NYC, with each point color-coded by the race of the person stopped. Black individuals are overwhelmingly represented, making up the majority of stop locations throughout the city.</p>`;
 newDescHTML2 = `
         <h1><strong>NYC Stop Map<br>by Sex</strong></h1>
-        <p>In the other version of this map, stops are color-coded by sex: blue for male and red for female. Blue clearly dominates the map, showing that the vast majority of police stops involve male individuals, with female stops barely visible in comparison.</p><br>`;
+        <p>In this version of the map, the stops are color-coded by sex: blue for male and red for female. Blue clearly dominates the map, showing that the vast majority of police stops involve male individuals, with female stops barely visible in comparison.</p><br>`;
 const newDescHTML = sexMap ? newDescHTML1 : newDescHTML2;
 
 gsap.to(desc, {

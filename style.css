@@ -201,8 +201,8 @@ text-align: center;
     align-items: center;
     position: absolute;
     height: 100%;
-    padding-left: 50vw;  /* Empty space on the left */
-    padding-right: 50vw; /* Empty space on the right */
+    padding-left: 50vw; 
+    padding-right: 50vw; 
     gap: 100px;
   }
 

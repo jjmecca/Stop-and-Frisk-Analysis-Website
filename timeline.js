@@ -1,13 +1,11 @@
 // gsap scroll trigger
 gsap.registerPlugin(ScrollTrigger);
 
-// Fetch event data from JSON
 fetch('events.json')
     .then(response => response.json() )
     .then(events => {
         const timeline = document.getElementById('timeline');
 
-        // Dynamically create event elements
         events.forEach((event, index) => {
             const eventDiv = document.createElement('div');
             eventDiv.className = `event ${ index % 2 === 0 ? 'event-top' : 'event-bottomn' }`;
@@ -25,7 +23,6 @@ fetch('events.json')
             timeline.appendChild(eventDiv);
         });
 
-        // Initialize GSAP after events are added
         initializeScrollTrigger();
     })
     .catch(error => console.error('Error loading events:', error));
