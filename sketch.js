@@ -1,7 +1,7 @@
 let carModel, carTexture;
 let oWidth, oHeight, s;
 let rangle = 0;
-const canvas = document.getElementById("car");
+const canvas = document.getElementById("title");
 
 function preload() {
   carModel = loadModel('model/police-car.obj', true);

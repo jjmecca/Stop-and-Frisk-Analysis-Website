@@ -4,27 +4,33 @@ const dataset2 = {
   label: 'Weapon Found',
   data: [14338, 2633],
   backgroundColor: [
-    'rgb(255, 99, 132)',
-    'rgb(75, 100, 170)'
-  ]
+    'rgba(170, 22, 50, 0.583)',
+    'rgba(75, 100, 170,0.583)'
+  ],
+  borderWidth: 1,
+  borderColor: "aliceblue"
 };
 
 const dataset3 = {
   label: 'Suspect Arrested',
   data: [12071, 4900],
   backgroundColor: [
-    'rgb(255, 99, 132)',
-    'rgb(75, 100, 170)'
-  ]
+    'rgba(170, 22, 50, 0.583)',
+    'rgba(75, 100, 170,0.583)'
+  ],
+  borderWidth: 1,
+  borderColor: "aliceblue"
 };
 
 const dataset1 = {
     label: 'Frisked',
     data: [10924, 6047],
     backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(75, 100, 170)'
-    ]
+      'rgba(170, 22, 50, 0.583)',
+      'rgba(75, 100, 170,0.583)'
+    ],
+    borderWidth: 1,
+    borderColor: "aliceblue"
   };
 
 const pieData1 = {

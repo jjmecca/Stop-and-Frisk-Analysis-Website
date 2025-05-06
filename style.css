@@ -16,6 +16,25 @@
     color: aliceblue;
 }
 
+.dropdown-menu{
+    background-color: #141f2a;
+    outline-color: aliceblue;
+}
+
+.dropdown-menu a{
+    font-size: 18px;
+    font-family: "Proxima Nova";
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.dropdown-menu a:hover{
+    background-color: #111a23 !important;
+    font-weight: normal !important;
+    overflow-x:hidden;
+    max-width: max-content;
+    margin-left: 0px;
+}
+
 a {
     font-family: "Proxima Nova";
     color: aliceblue;
@@ -50,6 +69,7 @@ canvas{
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     color: #141f2a;
+    position: relative;
 }
 
 footer{
@@ -59,7 +79,10 @@ footer{
 
 #Section1,#Section2,#Section3,#Section4{
     min-height: 100vh;
-    border: 1px solid #000000; /* temporary */
+}
+
+.col-8{
+    border-bottom: 5px dashed #15232d;
 }
 
 #barchart {
@@ -117,13 +140,22 @@ p{
 
 #table_button:active{
     background-color: #0d131b !important;
-    border-color:rgb(150, 161, 170) !important; 
+    border-color:rgb(255, 255, 255) !important; 
     color: rgb(150, 161, 170) !important;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     src: url(font/proxima_nova.woff2) format('woff2');
+}
+
+
+.source-code-pro{
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #15212b;
+    font-weight: 600;
 }
 
 #maps {
@@ -180,15 +212,15 @@ text-align: center;
     left: 0;
     width: 100%;
     height: 8px;
-    background-color: #0B3D91;
+    background-color: #141f2ac3;
     z-index: -1;
   }
 
   .event {
     position: relative;
     width: 300px;
-    background-color: #0B3D91;
-    color: white;
+    background-color: #141f2ac3;
+    color: aliceblue;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -212,7 +244,7 @@ text-align: center;
 
   .event-date {
     font-size: 0.9rem;
-    color: #c8e6c9;
+    color: rgba(240, 248, 255, 0.904);
     margin: 5px 0;
   }
 
@@ -220,3 +252,107 @@ text-align: center;
     font-size: 0.95rem;
     margin-top: 10px;
   }
+
+  #data_button{
+    right: 50.1%;
+  }
+
+  #about_button{
+    left: 50.1%;
+  }
+
+  #data_button,#about_button{
+    position: absolute;
+    width: 12%;
+    top: 90%;
+    background-color: #141f2ab4; 
+    border-color:rgba(182, 194, 205,0.75); 
+    color: rgba(182, 194, 205,0.75); 
+    margin-bottom: 20px;
+  }
+  #data_button:hover,#about_button:hover{
+    background-color: #141f2a; 
+    border-color:rgb(182, 194, 205); 
+    color: rgb(182, 194, 205); 
+  }
+
+  #back_button{
+    position: relative;
+  }
+
+.btn-outline-primary {
+    background-color: #141f2a9a !important;
+    color: aliceblue !important;
+    border: 0px !important;
+} 
+
+.btn-outline-primary:hover {
+    background-color: #141f2acd !important;
+    color: aliceblue !important;
+    border: 0px !important;
+} 
+
+.btn-check:checked + .btn-outline-primary {
+    background-color: #0b151f6e !important;
+    color: aliceblue !important;
+    border: 0px !important;
+}
+
+#map_button,#bar_button,#reload_button{
+    background-color: aliceblue;
+}
+
+#map_button{
+    width: 55%;
+}
+
+.accordion-button {
+    background-color: #15212b;
+    color: aliceblue;
+    font-size: 20px;
+    border: 1px solid #131c24;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: #131c24;
+    color: aliceblue;
+    font-weight: bold;
+  }
+
+.accordion-body {
+    background-color: #2b3c4a;
+    color: rgb(181, 192, 202);
+    font-size: 18px;
+}
+
+.accordion-item {
+    border: 0px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 90%;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.accordion-body a, .accordion-body p{
+    color: rgb(181, 192, 202);
+    font-size: 18px;
+    padding: 0px;
+}
+
+.accordion-body a{
+    font-weight: bold;
+}
+
+#about{
+    background-image: url("img/preview.png");
+    background-blend-mode:color;
+    background-color: rgba(12, 37, 61, 0.3);
+    background-repeat: repeat;
+    position: relative;
+}

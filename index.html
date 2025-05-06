@@ -42,13 +42,19 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section1">Stops by Race</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section2">Stop vs Pop</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section3">NYC Stop Map</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section4">Part 4</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section5">Part 4</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Section5">Part 4</a></li>
-              <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sections
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#Section1">Stops by Month</a></li>
+                  <li><a class="dropdown-item" href="#Section2">Demographic Barchart</a></li>
+                  <li><a class="dropdown-item" href="#Section3">Demographic Map</a></li>
+                  <li><a class="dropdown-item" href="#Section4">Disparity by Borough</a></li>
+                  <li><a class="dropdown-item" href="#Section5">Stop Outcomes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
               <li class="nav-item"><a class="nav-link active" href="#scrollspyHeading6">Contact Me</a></li>
             </ul>
           </div>
@@ -63,21 +69,24 @@
       padding: 20px;
       line-height: 1.8;
       margin: 0 auto;
-      text-align: center;" id="car">
+      text-align: center;">
           <div class="row order-first justify-content-center text-center">
-            <h2 id='target'style="font-size: 80px; color: aliceblue; padding-top: 100px; padding-bottom: 0%;">New York City</h2>
+            <h2 id='target'style="font-size: 80px; color: aliceblue; padding-top: 70px; padding-bottom: 0%;">New York City</h2>
             <h2 id='target2' style="font-size: 65px; color: aliceblue; padding-bottom: 0%;">Stop & Frisk Data</h2> <!-- Textilate this! -->
           </div>
           <div class="row justify-content-center text-center mx-auto">
             <script src="sketch.js"></script>
+            <a href="#Section1">
+              <button id="data_button" type="button" class="btn btn-secondary btn-lg active" href="#Section1">View the Data</button>
+            </a>
+            <a href="about.html">
+              <button id="about_button" type="button" class="btn btn-secondary btn-lg active" href="#Section1">About the Data</button>
+            </a>
           </div>
       </main>
       <main class="container-fluid">
         <div class="row order-first align-items-center text-center" style="background-color: #141f2a; padding-bottom: 40px; padding-top: 20px; padding-left: 100px; padding-right: 100px;">
-          <p style="font-size: 25px;">The NYPD has conducted millions of stop-and-frisks in New York City over the last two decades. The majority of those stopped are people of color, and a
-            vastly disproportionate number are Black. There is no evidence that ramping up stops makes New Yorkers safer. But we do know that many of these stops
-            have been unlawful and that some have led to violent police misconduct. The following is an analysis of New York City’s stop-and-frisk data, including a 
-            list of stops by year.</p>
+          <p style="font-size: 25px;">This site is an exploration of NYPD stop-and-frisk data (2023) with a focus on racial disparities. The majority of stops have targeted people of color, Black individuals in particular, raising serious concerns about bias, legality, and public safety. Through data visualizations, I highlight the patterns and impact of these practices.</p>
         </div>
       </main>
       
@@ -87,16 +96,16 @@
           <div class="row">
             <div class="col-8" style="padding-top: 100px; min-height: 100vh;">
               <div class="row order-first align-items-center text-center">
-                <h2 id="barchart_title">Stop Counts by Month</h2>
+                <h2>Stop Counts by Month</h2>
               </div>
               <div class="row align-items-center text-center">
                 <canvas id="linechart"></canvas>
-                <button type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d;" onclick="reloadLine()">Reload</button>
+                <button type="button" class="btn btn-light btn-md" id="reload_button" style="color: #15232d; margin-top: 10px;" onclick="reloadLine()">Reload</button>
               </div>
             </div>
             <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
               <div id="info">
-                <div class="row order-first align-items-center justify-content-center" id="info1">
+                <div class="row order-first align-items-center justify-content-center">
                   <h1><strong>Stops by Month</strong></h1>
                     <p>This line chart displays the total number of stop-and-frisk incidents recorded each month of 2023. The data shows a gradual increase over time, culminating in a noticeable peak in October, which recorded the highest number of stops at 1,734. This spike highlights a significant surge in activity during that period.<br><br></p>
                 </div>
@@ -113,8 +122,8 @@
               </div>
               <div class="row align-items-center text-center">
                 <canvas id="barchart"></canvas>
-                <button type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d; width: 50%;" onclick="reloadGraph()">Reload</button>
-                <button id="bar_button" type="button" class="btn btn-secondary btn-sm" style="background-color: rgb(182, 194, 205); color: #15232d; width: 50%;" onclick="changeBar()">View by Sex</button>
+                <button type="button" class="btn btn-light btn-sm" id="reload_button" style="color: #15232d; width: 50%;" onclick="reloadGraph()">Reload</button>
+                <button id="bar_button" type="button" class="btn btn-light btn-sm" style="color: #15232d; width: 50%;" onclick="changeBar()">View by Sex</button>
               </div>
             </div>
             <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
@@ -150,7 +159,7 @@
             </div>
             <div class="row justify-content-center align-items-center text-center" id="maps">
                 <img id="map1" src="img/racemap.png" class="img-fluid mx-2">
-                <button id="map_button" type="button" class="btn btn-secondary btn-lg active" style="background-color: #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-bottom: 20px; margin-top: 30px;" onclick="replaceMap()">View by Sex</button>
+                <button id="map_button" type="button" class="btn btn-light btn-md" style="color: #141f2a; margin-bottom: 20px; margin-top: 30px;" onclick="replaceMap()">View by Sex</button>
             </div>
           </div>
           <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;">
@@ -226,16 +235,13 @@
           <div class="col-8" id="mapSlide" style="padding-top: 65px; min-height: 100vh;">
             <div class="row order-first align-items-center justify-content-center text-center">
               <h2 id="mapTitle" style="margin-bottom: 20px;">Stop Outcomes</h2>
-              <div class="btn-group btn-group-toggle" style="width: 80%;" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" onclick="frisked()"> Frisked
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off" onclick="weapon()"> Weapon Found
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option3" autocomplete="off" onclick="arrested()"> Arrested
-                </label>
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1"onclick="frisked()"> Frisked</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2"onclick="weapon()"> Weapon Found</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3"onclick="arrested()"> Arrested</label>
               </div>
             </div>
             <div class="row justify-content-center align-items-center text-center" id="maps">
@@ -252,7 +258,14 @@
           </div>
         </div>
       </div>
-    </main>        
+
+      <div id="SectionEND" class="container-fluid">
+        <div class="row">
+          <div class="col-8 justify-content-center text-center align-items-center" style="padding-top: 30px; min-height: 1vh; border-bottom: 0px;;"><a href="#title" type="button" id="back_button" class="btn btn-secondary btn-lg active" style="background-color:  #141f2a; border-color:rgb(182, 194, 205); color: rgb(182, 194, 205); margin-bottom: 20px; margin-top: 30px;">Back to Top</a></div>
+          <div class="col-4" style="background-color: #15232d; padding-top: 100px; padding-left: 50px;"></div>
+        </div>
+      </div>
+    </main>
     <!-- END MAIN CONTENT-->
 
     <!-- BEGIN FOOTER -->

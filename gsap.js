@@ -61,11 +61,11 @@ gsap.to(container, {
     const newTableHTML1 = `
         <table>
         <tr><th>Borough</th><th>POC Population %</th><th>POC Stop %</th></tr>
-        <tr><td>Staten Island</td><td>44.6%</td><td>79.21%</td></tr>
-        <tr><td>Manhattan</td><td>68.7%</td><td>93.14%</td></tr>
-        <tr><td>Queens</td><td>76%</td><td>90.88%</td></tr>
-        <tr><td>Brooklyn</td><td>62.8%</td><td>92.73%</td></tr>
-        <tr><td>The Bronx</td><td>91%</td><td>98.47%</td></tr>
+        <tr><td>Staten Island</td><td>44.6%</td><td>79.2%</td></tr>
+        <tr><td>Manhattan</td><td>68.7%</td><td>93.1%</td></tr>
+        <tr><td>Queens</td><td>76.0%</td><td>90.9%</td></tr>
+        <tr><td>Brooklyn</td><td>62.8%</td><td>92.7%</td></tr>
+        <tr><td>The Bronx</td><td>91.0%</td><td>98.5%</td></tr>
         </table>
     `;
 
