@@ -263,7 +263,6 @@ text-align: center;
 
   #data_button,#about_button{
     position: absolute;
-    width: 12%;
     top: 90%;
     background-color: #141f2ab4; 
     border-color:rgba(182, 194, 205,0.75); 
@@ -276,6 +275,10 @@ text-align: center;
     color: rgb(182, 194, 205); 
   }
 
+  #data_button{
+    width: 12%;
+  }
+
   #back_button{
     position: relative;
   }
@@ -285,6 +288,9 @@ text-align: center;
     color: aliceblue !important;
     border: 0px !important;
 } 
+#about_button{
+    width: 13%;
+}
 
 .btn-outline-primary:hover {
     background-color: #141f2acd !important;
