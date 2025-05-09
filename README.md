@@ -1,0 +1,1 @@
+This is a website analyzing and exploring NYPD Stop & Frisk data made available by NYCLU. This was intially a project made for my Web Design class, DiDA 280W. Programmed and designed entirely by me, Jake Mecca.
